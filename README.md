@@ -75,14 +75,16 @@ python reproduce/param_count.py                                    # parameter c
 
 | Paper | Script | Output |
 |---|---|---|
-| Figure 1 | `fig_overview.py` | `figures/fig_overview.pdf` |
-| Figures 2, 3 and 4, Supplementary Figure S1 | `figures.py` | `figures/fig_squash.pdf`, `fig_clustering.pdf`, `fig_membrane.pdf`, `fig_supp_clustering.pdf`, `results/stats_half.json` |
-| Figure 5 | `forecast.py`, `forecast_bump.py` | `figures/fig_forecast.pdf`, `results/forecast_stats_half.json`, `results/bump_half.json` |
+| overview figure | `fig_overview.py` | `figures/fig_overview.pdf` |
+| excluded-volume, clustering and membrane figures, Supplementary Figure S1 | `figures.py` | `figures/fig_squash.pdf`, `fig_clustering.pdf`, `fig_membrane.pdf`, `fig_supp_clustering.pdf`, `results/stats_half.json` |
+| forecast figure | `forecast.py`, `forecast_bump.py` | `figures/fig_forecast.pdf`, `results/forecast_stats_half.json`, `results/bump_half.json` |
+| snapshot figure | `fig_snapshots.py` | `figures/fig_snapshots.pdf` |
+| start of the generated membrane (junction and node depths over the first 2,000 frames) | `junction_transient.py` (GPU) | `results/junction_transient.txt` |
 | histogram score | `score_histogram.py` | `results/g_half.jsonl` |
 | Results, Supplementary Tables S3 to S12 | `results_table.py` | `results/RESULTS_half.md` |
 | videos | `roll_hyper_video.py`, `video.py` | `assets/videos/`, `videos/` |
 
-From the checkpoints, on a GPU, `LEVEL=2 bash reproduce/run_all.sh` first draws the held-out rollouts, the forecasts and the excluded-volume traces again (`roll_heldout.py`, `roll_forecast.py`, `trace_squash.py`; `DEVICE` selects the device). The rollouts use seed 3000. Each script skips what it has already written: move `assets/rollouts/heldout/` and `results/rows_half.jsonl`, `assets/rollouts/forecast/`, and `results/traces/` away to draw the held-out rollouts, the forecasts and the traces again.
+From the checkpoints, on a GPU, `LEVEL=2 bash reproduce/run_all.sh` first draws the held-out rollouts, the forecasts and the excluded-volume traces again (`roll_heldout.py`, `roll_forecast.py`, `trace_squash.py`; `DEVICE` selects the device); `junction_transient.py` also needs the GPU. The rollouts use seed 3000. Each script skips what it has already written: move `assets/rollouts/heldout/` and `results/rows_half.jsonl`, `assets/rollouts/forecast/`, and `results/traces/` away to draw the held-out rollouts, the forecasts and the traces again.
 
 ## Training
 
