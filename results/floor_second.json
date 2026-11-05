@@ -1,0 +1,23 @@
+{
+ "code": "gr_lib.Ref.score (KL(MD||other MD)/KL(MD||random), merge 1 for 7P, 20 for 14P)",
+ "second": {
+  "7P": {
+   "7piezo_R1second": 0.4971638649658675,
+   "7piezo_R2second": 0.48521746000621113,
+   "merge": 1,
+   "inputs": [
+    "data/membrane/half/7piezo_R1second.csv",
+    "data/membrane/half/7piezo_R2second.csv"
+   ]
+  },
+  "14P": {
+   "piezo14_rep01second": 0.8309815119095197,
+   "piezo14_rep02second": 0.6626555049745838,
+   "merge": 20,
+   "inputs": [
+    "data/membrane/half/piezo14_rep01second.csv",
+    "data/membrane/half/piezo14_rep02second.csv"
+   ]
+  }
+ }
+}

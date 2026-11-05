@@ -1,0 +1,268 @@
+{
+ "h14_base_s700": {
+  "epoch": 9,
+  "epoch_signed": 13,
+  "old_epoch": 13,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_base_s701": {
+  "epoch": 9,
+  "epoch_signed": 18,
+  "old_epoch": 19,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_base_s702": {
+  "epoch": 13,
+  "epoch_signed": 16,
+  "old_epoch": 14,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_base_s703": {
+  "epoch": 16,
+  "epoch_signed": 16,
+  "old_epoch": 16,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_base_s704": {
+  "epoch": 12,
+  "epoch_signed": 16,
+  "old_epoch": 11,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_sq_s700": {
+  "epoch": 9,
+  "epoch_signed": 9,
+  "old_epoch": 19,
+  "n_epochs": 20,
+  "source": "polaris"
+ },
+ "h14_lk_both_sq_s701": {
+  "epoch": 18,
+  "epoch_signed": 7,
+  "old_epoch": 17,
+  "n_epochs": 20,
+  "source": "polaris"
+ },
+ "h14_lk_both_sq_s702": {
+  "epoch": 11,
+  "epoch_signed": 11,
+  "old_epoch": 14,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_sq_s703": {
+  "epoch": 15,
+  "epoch_signed": 9,
+  "old_epoch": 9,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_sq_s704": {
+  "epoch": 17,
+  "epoch_signed": 12,
+  "old_epoch": 12,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h7_base_s700": {
+  "epoch": 39,
+  "epoch_signed": 39,
+  "old_epoch": 39,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s701": {
+  "epoch": 30,
+  "epoch_signed": 30,
+  "old_epoch": 38,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s702": {
+  "epoch": 35,
+  "epoch_signed": 35,
+  "old_epoch": 36,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s703": {
+  "epoch": 31,
+  "epoch_signed": 31,
+  "old_epoch": 29,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s704": {
+  "epoch": 33,
+  "epoch_signed": 33,
+  "old_epoch": 34,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s705": {
+  "epoch": 38,
+  "epoch_signed": 38,
+  "old_epoch": 33,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_base_s706": {
+  "epoch": 9,
+  "epoch_signed": 9,
+  "old_epoch": 8,
+  "n_epochs": 10,
+  "source": "nrp"
+ },
+ "h7_base_s707": {
+  "epoch": 7,
+  "epoch_signed": 7,
+  "old_epoch": 7,
+  "n_epochs": 9,
+  "source": "nrp"
+ },
+ "h7_lk_both_sq_s700": {
+  "epoch": 37,
+  "epoch_signed": 37,
+  "old_epoch": 36,
+  "n_epochs": 40,
+  "source": "wcluster"
+ },
+ "h7_lk_both_sq_s701": {
+  "epoch": 29,
+  "epoch_signed": 29,
+  "old_epoch": 31,
+  "n_epochs": 40,
+  "source": "wcluster"
+ },
+ "h7_lk_both_sq_s702": {
+  "epoch": 31,
+  "epoch_signed": 31,
+  "old_epoch": 32,
+  "n_epochs": 40,
+  "source": "wcluster"
+ },
+ "h7_lk_both_sq_s703": {
+  "epoch": 34,
+  "epoch_signed": 34,
+  "old_epoch": 35,
+  "n_epochs": 40,
+  "source": "wcluster"
+ },
+ "h7_lk_both_sq_s704": {
+  "epoch": 32,
+  "epoch_signed": 32,
+  "old_epoch": 32,
+  "n_epochs": 40,
+  "source": "wcluster"
+ },
+ "h7_lk_both_sq_s705": {
+  "epoch": 37,
+  "epoch_signed": 37,
+  "old_epoch": 38,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_sq_s706": {
+  "epoch": 34,
+  "epoch_signed": 34,
+  "old_epoch": 34,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_sq_s707": {
+  "epoch": 37,
+  "epoch_signed": 37,
+  "old_epoch": 39,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_sq_s708": {
+  "epoch": 9,
+  "epoch_signed": 9,
+  "old_epoch": 9,
+  "n_epochs": 10,
+  "source": "nrp"
+ },
+ "h7_lk_both_sq_s709": {
+  "epoch": 5,
+  "epoch_signed": 5,
+  "old_epoch": 5,
+  "n_epochs": 6,
+  "source": "nrp"
+ },
+ "h14_lk_both_s700": {
+  "epoch": 9,
+  "epoch_signed": 13,
+  "old_epoch": 11,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_s701": {
+  "epoch": 15,
+  "epoch_signed": 19,
+  "old_epoch": 17,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_s702": {
+  "epoch": 14,
+  "epoch_signed": 17,
+  "old_epoch": 18,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_s703": {
+  "epoch": 18,
+  "epoch_signed": 16,
+  "old_epoch": 16,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h14_lk_both_s704": {
+  "epoch": 6,
+  "epoch_signed": 19,
+  "old_epoch": 19,
+  "n_epochs": 20,
+  "source": "nrp"
+ },
+ "h7_lk_both_s700": {
+  "epoch": 37,
+  "epoch_signed": 37,
+  "old_epoch": 29,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_s701": {
+  "epoch": 32,
+  "epoch_signed": 32,
+  "old_epoch": 28,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_s702": {
+  "epoch": 33,
+  "epoch_signed": 33,
+  "old_epoch": 31,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_s703": {
+  "epoch": 33,
+  "epoch_signed": 33,
+  "old_epoch": 34,
+  "n_epochs": 40,
+  "source": "nrp"
+ },
+ "h7_lk_both_s704": {
+  "epoch": 34,
+  "epoch_signed": 34,
+  "old_epoch": 36,
+  "n_epochs": 40,
+  "source": "nrp"
+ }
+}

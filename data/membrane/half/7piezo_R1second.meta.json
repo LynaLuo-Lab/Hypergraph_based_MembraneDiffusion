@@ -1,0 +1,36 @@
+{
+ "file": "7piezo_R1second.csv",
+ "built": "2026-11-01",
+ "replica": "R1 (trajectory 2, traj2)",
+ "frames": 8316,
+ "ts_range": [
+  83350000,
+  166500000
+ ],
+ "stride": 10000,
+ "second_of": "full R1 = 16631 frames, ts 200000 .. 166500000; frames after the first floor(16631/2) = 8315 (7piezo_R1half.csv)",
+ "rows": {
+  "from_traj2_dedup": {
+   "n": 8316,
+   "ts": [
+    83350000,
+    166500000
+   ],
+   "note": "verbatim lines 4263-12578 (to the end)"
+  }
+ },
+ "gap": "the csv is contiguous (no holes); the 999-frame hole is in the mesh (rep01_mesh_stacked.out lacks ts 126510000-136490000), so it appears in the npz/arms npz, not here",
+ "normalization": {
+  "delta_std": 4.018202195868217,
+  "box_nominal_A": 3440.3686,
+  "box_normalized": 856.1959882301632,
+  "source": "data/normalization_stats.json"
+ },
+ "guard_csv": {
+  "file": "7piezo_R1second_angstrom.csv",
+  "what": "data/7piezo_traj2_unwrapped_angstrom.csv rows (last copy per ts) for the same ts; read only by the arms alignment guard"
+ },
+ "scripts": [
+  "scripts/membrane/data_prep/half/make_second.py"
+ ]
+}

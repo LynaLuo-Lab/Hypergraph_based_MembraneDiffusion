@@ -1,0 +1,27 @@
+{
+ "file": "7piezo_R2second.csv",
+ "built": "2026-11-01",
+ "replica": "R2 (trajectory 1, traj1)",
+ "frames": 5552,
+ "ts_range": [
+  190640000,
+  246150000
+ ],
+ "stride": 10000,
+ "second_of": "data/7piezo_traj1_ext.csv (11103 frames, ts 135130000 .. 246150000); rows after the first floor(11103/2) = 5551",
+ "rows": "lines 5552-11103 of data/7piezo_traj1_ext.csv verbatim (byte-identical)",
+ "normalization": {
+  "delta_std": 4.018202195868217,
+  "box_nominal_A": 3440.3686,
+  "box_normalized": 856.1959882301632,
+  "source": "data/normalization_stats.json"
+ },
+ "wrap": "inherited from traj1_ext: every axis mod 3440.3686 except protein 4 x mod the R2 box 3439.515112",
+ "guard_csv": {
+  "file": "7piezo_R2second_angstrom.csv",
+  "what": "data/7piezo_traj1_unwrapped_angstrom.csv rows for the same ts (it covers 175130000..246150000); read only by the arms alignment guard"
+ },
+ "scripts": [
+  "scripts/membrane/data_prep/half/make_second.py"
+ ]
+}

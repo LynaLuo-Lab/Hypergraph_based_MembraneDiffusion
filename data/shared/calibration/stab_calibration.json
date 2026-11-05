@@ -1,0 +1,92 @@
+{
+  "weights": {
+    "tamsd": 3.0,
+    "msd_log": 2.0,
+    "pair": 2.0,
+    "ngp": 1.0,
+    "van_hove": 0.5,
+    "vel": 0.3,
+    "vacf": 0.5
+  },
+  "meta": {
+    "method": "discriminative-power weighting from round-1 + round-2 ablation comparison (2026-05-24)",
+    "rationale": "Weights reflect how well each metric separates good-physics models (gayso5zk, 4jh11k6m) from poor ones. Previous inverse-stddev method gave VACF weight=5 because all models produce VACF~0 (low variance = high inverse-stddev), but constant metrics are noise, not signal. New weights: alpha/MSD/pair dominate (73% of signal) because they consistently rank models correctly.",
+    "reported_objective": "mean only (removed +std term; with n_samples=4 the std is more stable but still shouldn't dominate checkpoint selection)",
+    "n_samples": 4,
+    "reference_ckpts": [
+      "zkr9btdc", "9r6puo61", "1uegmck1", "4jh11k6m", "o4u9ihjt",
+      "l9wnmnh5", "n37552he", "2by9ntps", "zsqgynvv", "9hc3x0lk",
+      "q19huxsu", "44rujt27", "23cnyche", "uutr907d"
+    ],
+    "ablation_arms_used_for_calibration": [
+      "eeoclepl", "1n530uvk", "x5ov6i4l", "v31owk74", "34nlwp33",
+      "futocz27", "k4kk8mbd", "c65rtg6d", "z2tgyjir",
+      "eihcbl95", "9t9eeij8", "xy2jf56l", "1t1vasj8", "y19cbeqb"
+    ],
+    "gt_csv": "data/7piezo_traj2.csv",
+    "lags": [1, 5, 10, 25, 50, 100, 250, 500, 1000, 2000, 5000],
+    "vacf_lags": [1, 5, 10, 25, 50, 100, 250, 500],
+    "msd_ratio_lag": 500,
+    "box_size": 856.196,
+    "typical_contributions_mediocre_arm": {
+      "tamsd": "3.0 * 0.13 = 0.39 (25%)",
+      "msd_log": "2.0 * 0.15 = 0.30 (19%)",
+      "pair": "2.0 * 0.23 = 0.46 (30%)",
+      "ngp": "1.0 * 0.14 = 0.14 (9%)",
+      "van_hove": "0.5 * 0.27 = 0.14 (9%)",
+      "vel": "0.3 * 0.36 = 0.11 (7%)",
+      "vacf": "0.5 * 0.004 = 0.002 (0.1%)"
+    },
+    "per_metric_stats": {
+      "tamsd_err": {
+        "n": 14,
+        "mean": 0.12428996484131051,
+        "std": 0.09446028838485061,
+        "min": 5.986919030549208e-05,
+        "max": 0.3689301953744584
+      },
+      "van_hove_err": {
+        "n": 14,
+        "mean": 0.26905994223696844,
+        "std": 0.0938866543415472,
+        "min": 0.17030012607574463,
+        "max": 0.5609763860702515
+      },
+      "ngp_err": {
+        "n": 14,
+        "mean": 0.14310260068796768,
+        "std": 0.08252894806978338,
+        "min": 0.061630951185962735,
+        "max": 0.40108474294354063
+      },
+      "pairwise_dist_err": {
+        "n": 14,
+        "mean": 0.22847759085042135,
+        "std": 0.07638198816521902,
+        "min": 0.13509832322597504,
+        "max": 0.39941975474357605
+      },
+      "vel_err": {
+        "n": 14,
+        "mean": 0.3618632959468024,
+        "std": 0.10477431056483433,
+        "min": 0.1540851891040802,
+        "max": 0.4845224618911743
+      },
+      "vacf_err": {
+        "n": 14,
+        "mean": 0.004257783763543037,
+        "std": 0.001821282698825698,
+        "min": 0.0005017080693505704,
+        "max": 0.006902136839926243
+      },
+      "msd_log_err": {
+        "n": 14,
+        "mean": 0.5077921322413853,
+        "std": 0.2126747579141248,
+        "min": 0.1256093978881836,
+        "max": 0.8925514221191406
+      }
+    }
+  }
+}

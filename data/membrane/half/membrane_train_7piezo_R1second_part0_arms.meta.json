@@ -1,0 +1,25 @@
+{
+ "file": "membrane_train_7piezo_R1second_part0_arms.npz",
+ "built": "2026-11-01",
+ "frames": 4316,
+ "ts_range": [
+  83350000,
+  126500000
+ ],
+ "stride": 10000,
+ "split_from": "membrane_train_7piezo_R1second_arms.npz",
+ "command": "python scripts/membrane/data_prep/split_membrane_gaps.py --npz data/membrane/half/membrane_train_7piezo_R1second_arms.npz --min-frames 3000",
+ "per_frame_equal_to_unsplit": true,
+ "keys": [
+  "arm_radius",
+  "blade_vec",
+  "coords",
+  "frames",
+  "hyper_depth",
+  "ksize",
+  "members",
+  "meta",
+  "node_depth",
+  "theta"
+ ]
+}

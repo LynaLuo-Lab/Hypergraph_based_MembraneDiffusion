@@ -1,0 +1,64 @@
+{
+ "file": "membrane_train_7piezo_R2second_arms.npz",
+ "built": "2026-11-01",
+ "frames": 5552,
+ "ts_range": [
+  190640000,
+  246150000
+ ],
+ "stride": 10000,
+ "sources": {
+  "protein_csv": "data/membrane/half/7piezo_R2second.csv",
+  "mesh": "data/membrane/raw/rep02_mesh_stacked.out",
+  "arms_markers": [
+   "data/7piezo_R2/*.extracted.lammpstrj"
+  ],
+  "arms_guard_csv": "data/membrane/half/7piezo_R2second_angstrom.csv"
+ },
+ "mesh_pairing": "5552/5552 frames paired (100.0%); split_membrane_gaps.py --dry-run: 1 contiguous block",
+ "pipeline": "same as the first half: rebuild_membrane_train.sh stages 1-4 then build_membrane_arms.py, current repo code (9.63 A grid fix in)",
+ "commands": [
+  "python scripts/membrane/data_prep/half/make_second.py",
+  "python scripts/membrane/data_prep/extract_aligned_mesh.py --mesh data/membrane/raw/rep02_mesh_stacked.out --prot data/membrane/half/7piezo_R2second.csv --out $S/aligned_7piezo_R2second",
+  "python scripts/membrane/data_prep/membrane_graph_dynamics.py --am $S/aligned_7piezo_R2second --out $S/graph_7piezo_R2second --no-csv",
+  "python scripts/membrane/data_prep/membrane_hypergraph.py --am $S/aligned_7piezo_R2second --graph $S/graph_7piezo_R2second/graph.npz --out $S/graph_7piezo_R2second --no-csv",
+  "python scripts/membrane/data_prep/build_membrane_training_data.py --am $S/aligned_7piezo_R2second --mg $S/graph_7piezo_R2second --out data/membrane/half/membrane_train_7piezo_R2second.npz --label 7piezo_R2second",
+  "python scripts/membrane/data_prep/half/build_arms_second.py 7piezo_R2second   # build_membrane_arms.build_one, unmodified; then drops `connected`"
+ ],
+ "scratch": "$S = a scratch working directory for intermediate files, not kept; make_second.py and the commands below ran from the repo root",
+ "keys": [
+  "arm_radius",
+  "blade_vec",
+  "coords",
+  "frames",
+  "hyper_depth",
+  "ksize",
+  "members",
+  "meta",
+  "node_depth",
+  "theta"
+ ],
+ "dropped_keys": {
+  "connected": "written by the current build_membrane_training_data.py; dropped to match the first-half arms npz key set"
+ },
+ "arm_radius": 31.625591278076172,
+ "arms_box_A": 3439.51511153855,
+ "arms_npz_wrap_box_A": 3440.3686,
+ "validation": {
+  "reference": "data/membrane/membrane_train_7piezo_traj1_arms.npz",
+  "shared_frames": 5552,
+  "shared_ts": [
+   190640000,
+   246150000
+  ],
+  "max_abs_diff": {
+   "coords": 0.0,
+   "node_depth": 0.0,
+   "hyper_depth": 0.0,
+   "theta": 0.0,
+   "blade_vec": 0.0
+  },
+  "members_equal": true,
+  "dump_centre_vs_coords_max": 0.21246376080000573
+ }
+}

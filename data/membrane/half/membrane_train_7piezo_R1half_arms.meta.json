@@ -1,0 +1,69 @@
+{
+ "file": "membrane_train_7piezo_R1half_arms.npz",
+ "built": "2026-10-30",
+ "frames": 8315,
+ "ts_range": [
+  200000,
+  83340000
+ ],
+ "stride": 10000,
+ "sources": {
+  "protein_csv": "data/membrane/half/7piezo_R1half.csv",
+  "mesh": "data/membrane/raw/rep01_mesh_stacked.out",
+  "arms_markers": [
+   "data/shared/7piezo/marker_dumps/7piezo_R1/*.extracted.lammpstrj",
+   "data/shared/7piezo/marker_dumps/7piezo_traj2_ext/*.extracted.lammpstrj"
+  ],
+  "arms_guard_csv": "data/membrane/half/7piezo_R1half_angstrom.csv"
+ },
+ "mesh_pairing": "8315/8315 frames paired (100%); split_membrane_gaps.py --dry-run: 1 contiguous block",
+ "pipeline": "rebuild_membrane_train.sh stages 1-4 then build_membrane_arms.py, current repo code (9.63 A grid fix in)",
+ "commands": [
+  "python scripts/membrane/data_prep/extract_aligned_mesh.py --mesh data/membrane/raw/rep01_mesh_stacked.out --prot data/membrane/half/7piezo_R1half.csv --out $S/aligned_7piezo_R1half",
+  "python scripts/membrane/data_prep/membrane_graph_dynamics.py --am $S/aligned_7piezo_R1half --out $S/graph_7piezo_R1half --no-csv",
+  "python scripts/membrane/data_prep/membrane_hypergraph.py --am $S/aligned_7piezo_R1half --graph $S/graph_7piezo_R1half/graph.npz --out $S/graph_7piezo_R1half --no-csv",
+  "python scripts/membrane/data_prep/build_membrane_training_data.py --am $S/aligned_7piezo_R1half --mg $S/graph_7piezo_R1half --out data/membrane/half/membrane_train_7piezo_R1half.npz --label 7piezo_R1half",
+  "python scripts/membrane/data_prep/half/build_arms_half.py 7piezo_R1half   # build_membrane_arms.build_one, unmodified, with the spec below; then drops `connected`",
+  "python scripts/membrane/data_prep/split_membrane_gaps.py --npz data/membrane/half/membrane_train_7piezo_R1half_arms.npz --dry-run"
+ ],
+ "scratch": "$S = a scratch working directory for intermediate files, not kept; merge_dumps.py and make_csvs.py (scripts/membrane/data_prep/half/) ran with it as the working directory",
+ "keys": [
+  "arm_radius",
+  "blade_vec",
+  "coords",
+  "frames",
+  "hyper_depth",
+  "ksize",
+  "members",
+  "meta",
+  "node_depth",
+  "theta"
+ ],
+ "dropped_keys": {
+  "connected": "written by the current build_membrane_training_data.py; dropped to match the existing 7-piezo *_arms.npz key set (the loader does not read it)"
+ },
+ "arm_radius": 31.757735979025828,
+ "arms_box_A": 3440.3686404456544,
+ "arms_npz_wrap_box_A": 3440.3686,
+ "validation": {
+  "reference": "data/membrane/membrane_train_7piezo_traj2_part0_arms.npz",
+  "shared_frames": 4262,
+  "shared_ts": [
+   40730000,
+   83340000
+  ],
+  "max_abs_diff": {
+   "coords": 0.0,
+   "node_depth": 44.36834716796875,
+   "hyper_depth": 53.34159851074219,
+   "theta": 0.0,
+   "blade_vec": 0.0
+  },
+  "members_equal": true,
+  "ksize_equal": true,
+  "arm_radius_ref": 31.65794563293457,
+  "arm_radius_this_file_on_shared_window": 31.706816223093217,
+  "dump_centre_vs_coords_max": 0.0021554998475608045,
+  "node_hyper_note": "node_depth/hyper_depth differ because the REFERENCE predates the 9.63 A grid fix: recomputing depths on this build's aligned grids with the pre-fix sampler (BOX 3440.36, index % NG) reproduces part0 to 1.5e-5 (node) and 0.0 (hyper); large diffs occur only for proteins with a wrapped (negative raw) coordinate. coords/theta/blade_vec are bit-identical."
+ }
+}

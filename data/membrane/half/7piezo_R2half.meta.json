@@ -1,0 +1,29 @@
+{
+ "file": "7piezo_R2half.csv",
+ "built": "2026-10-30",
+ "replica": "R2 (trajectory 1, traj1)",
+ "frames": 5551,
+ "ts_range": [
+  135130000,
+  190630000
+ ],
+ "stride": 10000,
+ "half_of": "data/7piezo_traj1_ext.csv (11103 frames, ts 135130000 .. 246150000); first floor(11103/2) rows",
+ "rows": "lines 1-5551 of data/7piezo_traj1_ext.csv verbatim (byte-identical)",
+ "normalization": {
+  "delta_std": 4.018202195868217,
+  "box_nominal_A": 3440.3686,
+  "box_normalized": 856.1959882301632,
+  "source": "data/normalization_stats.json"
+ },
+ "wrap": "inherited from traj1_ext: every axis mod 3440.3686 except protein 4 x mod the R2 box 3439.515112",
+ "known_seams": "protein 0 x crosses the raw box boundary 12 times in these rows, each a 0.2124 (0.85 A) min-image step error; the same 12 traj1_ext.meta.json lists for its first 4000 rows",
+ "guard_csv": {
+  "file": "7piezo_R2half_angstrom.csv",
+  "what": "data/7piezo_traj1_unwrapped_angstrom.csv rows from 175130000; before that the box-centred R2 dump coords (productions 3-8, later file at seams) with protein 4 x wrapped into [0, 3439.515112) like traj1_ext; read only by the arms alignment guard"
+ },
+ "scripts": [
+  "scripts/membrane/data_prep/half/make_csvs.py"
+ ],
+ "scratch": "$S = a scratch working directory for intermediate files, not kept; merge_dumps.py and make_csvs.py (scripts/membrane/data_prep/half/) ran with it as the working directory"
+}

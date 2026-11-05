@@ -1,0 +1,77 @@
+{
+ "file": "7piezo_R1half.csv",
+ "built": "2026-10-30",
+ "replica": "R1 (trajectory 2, traj2)",
+ "frames": 8315,
+ "ts_range": [
+  200000,
+  83340000
+ ],
+ "stride": 10000,
+ "half_of": "full R1 = 16631 frames, ts 200000 .. 166500000 (4053 dump-only frames + data/7piezo_traj2_dedup.csv); first floor(16631/2)",
+ "rows": {
+  "from_dumps": {
+   "n": 4053,
+   "ts": [
+    200000,
+    40720000
+   ],
+   "source": "7piezo_R1/data.production{1..3}.lip.extracted.lammpstrj",
+   "conversion": "type-2 atom per protein sorted by atom id (= mol 999999..999993), np.mod(raw_A, 3440.3686) / delta_std on every axis, repr floats"
+  },
+  "from_traj2_dedup": {
+   "n": 4262,
+   "ts": [
+    40730000,
+    83340000
+   ],
+   "note": "verbatim lines 1-4262"
+  }
+ },
+ "seams": "production 1/2 share ts 5250000-5300000 (6 frames: identical at 5250000, then diverge up to 30.9 A) and 2/3 share 25250000 (identical); the later production is kept, as traj2_dedup does",
+ "normalization": {
+  "delta_std": 4.018202195868217,
+  "box_nominal_A": 3440.3686,
+  "box_normalized": 856.1959882301632,
+  "source": "data/normalization_stats.json"
+ },
+ "validation": {
+  "dump_conversion_vs_traj2_dedup_ts_40730000_51900000": {
+   "frames": 1118,
+   "max_abs_diff": 0.00214
+  },
+  "dump_conversion_vs_traj2_dedup_ts_40730000_111750000": {
+   "frames": 7103,
+   "max_abs_diff": 0.00214
+  },
+  "note": "no wrap disagreements (raw and min-imaged diff equal); 2e-3 = dump 6-significant-digit print precision",
+  "splice_xy_step_40720000_40730000": [
+   1.019,
+   1.094,
+   2.557,
+   1.987,
+   0.639,
+   1.198,
+   1.566
+  ],
+  "xy_step_p99": {
+   "dump_rows": 2.987,
+   "traj2_rows": 2.973
+  },
+  "xy_step_max": {
+   "dump_rows": 8.571,
+   "traj2_rows": 4.342,
+   "note": "the large steps are the first frames after the lattice start (200000->210000: 2.3-8.6)"
+  }
+ },
+ "guard_csv": {
+  "file": "7piezo_R1half_angstrom.csv",
+  "what": "raw box-centred dump coords for the dump rows, data/7piezo_traj2_unwrapped_angstrom.csv rows (last copy per ts) after; read only by the arms alignment guard"
+ },
+ "scripts": [
+  "scripts/membrane/data_prep/half/dumps.py",
+  "scripts/membrane/data_prep/half/merge_dumps.py",
+  "scripts/membrane/data_prep/half/make_csvs.py"
+ ],
+ "scratch": "$S = a scratch working directory for intermediate files, not kept; merge_dumps.py and make_csvs.py (scripts/membrane/data_prep/half/) ran with it as the working directory"
+}

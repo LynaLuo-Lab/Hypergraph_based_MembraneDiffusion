@@ -1,0 +1,12 @@
+{
+ "source_npz": "data/membrane/piezo14/npz/membrane_train_piezo14_rep01_arms.npz",
+ "source_csv": "data/membrane/piezo14/processed/piezo14_rep01.csv",
+ "frames_kept": 8100,
+ "of": 16201,
+ "ts_range": [
+  5000000,
+  85990000
+ ],
+ "rule": "first half (T//2) of the replica along the frame axis; per-frame arrays sliced, static arrays copied",
+ "built": "2026-10-30"
+}

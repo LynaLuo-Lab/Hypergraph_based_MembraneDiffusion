@@ -1,0 +1,9 @@
+# torch 2.10.0 (and triton 3.6.0, which sophia_g imports) come from the PyTorch wheels for your CUDA; ffmpeg is needed for videos
+lightning==2.6.1
+numpy==2.4.2
+pandas==3.0.1
+scipy==1.17.1
+optuna==4.7.0
+wandb==0.25.0
+matplotlib==3.10.8
+pytest==9.0.2
