@@ -2,7 +2,7 @@
 """usage: fetch_assets.py [--tag v0.1.0] [--only checkpoints,heldout,forecast,video] [--local DIR] [--dest assets] [--keep-tars]"""
 import argparse, hashlib, json, os, shutil, subprocess, sys, tarfile, tempfile, urllib.request
 
-REPO = 'KosarajuBioAI/HyperGraph-Clustering'
+REPO = 'LynaLuo-Lab/Hypergraph_based_MembraneDiffusion'
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # part -> (tar, prefix of the member paths it holds)
 TARS = {'checkpoints': [('checkpoints.tar', 'checkpoints/')],
